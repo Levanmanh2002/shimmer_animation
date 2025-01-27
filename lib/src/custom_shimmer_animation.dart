@@ -36,17 +36,14 @@ class CustomSplashAnimation extends CustomPainter {
       stops: stops,
       colors: [
         Colors.transparent,
-        (color).withValues(alpha: 0.05),
-        (color).withValues(alpha: opacity),
-        (color).withValues(alpha: 0.05),
+        (color).withOpacity(0.05),
+        (color).withOpacity(opacity),
+        (color).withOpacity(0.05),
         Colors.transparent
       ],
     ).createShader(
       Rect.fromLTRB(
-          size.width * -0.5,
-          (size.height > size.width) ? 0 : size.height * -0.5,
-          size.width * 1.5,
-          size.height * 1.5),
+          size.width * -0.5, (size.height > size.width) ? 0 : size.height * -0.5, size.width * 1.5, size.height * 1.5),
     );
     var path = Path();
 
